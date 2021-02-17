@@ -1,11 +1,9 @@
 package br.com.cesarshiba.leiautesmarciasoares;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
-import javafx.geometry.Rectangle2D;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
-import javafx.stage.Screen;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
@@ -36,11 +34,6 @@ public class MainClass extends Application {
 			primaryStage.initStyle(StageStyle.TRANSPARENT);
 			primaryStage.setScene(new Scene(parentRoot));
 			primaryStage.show();
-			Rectangle2D bounds = Screen.getPrimary().getVisualBounds();
-			double x = bounds.getMinX() + (bounds.getWidth() - primaryStage.getWidth()) * 0.5;
-			double y = bounds.getMinY() + (bounds.getHeight() - primaryStage.getHeight()) * 0.5;
-			primaryStage.setX(x);
-			primaryStage.setY(y);			
 		} catch (Exception e) {
 			System.out.println("Erro:"+ e);
 			System.exit(0);

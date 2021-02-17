@@ -1,4 +1,4 @@
-Cesaru Shiba;Masculino;cesarshiba@gmail.com
+Cesar Shiba;Masculino;cesarshiba@gmail.com
 Mirian Pimentel Shiba;Feminino;mirian.pimentelshiba@gmail.com
 Leonardo Shiba;Masculino;leonardoshib@gmail.com
 Fernanda Shiba;Feminino;fernandashb2010@gmail.com
