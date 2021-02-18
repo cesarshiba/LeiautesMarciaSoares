@@ -38,6 +38,8 @@ public class FrmClientes implements Initializable {
     public Button btnOk;
     
 	public void Ok(ActionEvent e) throws Exception {
+		MainClass.idCliente=1;
+		
 		Stage stage = (Stage) btnOk.getScene().getWindow();
 		stage.close();
 	}

@@ -9,8 +9,11 @@ import javafx.stage.StageStyle;
 
 public class MainClass extends Application {
 
+	//identifica primeira execução para abrir com splash
 	public static boolean loadSplash = false;
-	
+	//identifica cliente selecionado
+    public static int idCliente = 0;
+
 	/*
 	 * chave para gerar .jar em produção
 	 * devido localização dos formulários e 
@@ -46,5 +49,4 @@ public class MainClass extends Application {
 		}
 		return "";
 	}
-
 }

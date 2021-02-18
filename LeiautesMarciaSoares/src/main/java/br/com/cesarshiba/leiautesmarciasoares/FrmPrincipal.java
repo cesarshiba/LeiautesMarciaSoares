@@ -5,15 +5,15 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 import javafx.animation.FadeTransition;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.geometry.NodeOrientation;
 import javafx.geometry.Rectangle2D;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.MenuBar;
+import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
@@ -38,6 +38,18 @@ public class FrmPrincipal implements Initializable{
 		if (!MainClass.loadSplash) {
 			carregaSplash();
 		}
+		//monta quadros do cliente na tela principal
+		if(MainClass.idCliente != 0) {
+			Pane painel = new Pane();
+			painel.setPrefWidth(200);
+			painel.setPrefHeight(100);
+			painel.setNodeOrientation(NodeOrientation.RIGHT_TO_LEFT);
+			Label label = new Label("Testes");
+			label.setPrefSize(100, 80);
+			painel.getChildren().add(label);
+			root.setTop(painel);
+			//root.getChildren().setAll(painel);
+		}
 	}
 
 	private void carregaSplash() {
@@ -60,11 +72,12 @@ public class FrmPrincipal implements Initializable{
 			fadeOut.setFromValue(1);
 			fadeOut.setToValue(0);
 			fadeOut.setCycleCount(1);
+			//inicia splash
 			fadeIn.play();
 			fadeIn.setOnFinished((e) -> {
 				fadeOut.play();
 			});
-			
+			//finaliza splash
 			fadeOut.setOnFinished((e) ->{
 				BorderPane parentPane;
 				try {
@@ -98,6 +111,7 @@ public class FrmPrincipal implements Initializable{
 		btn.setGraphic(imageView);
 		btn.setPrefSize(95, 50);
 		btn.setStyle("-fx-background-color:#35145d");
+		//aciona botões do painel para chamar os procedimentos
 		btn.setOnAction(value -> {
 			switch (Integer.valueOf(nome)) {
 			case 1: {
@@ -136,8 +150,8 @@ public class FrmPrincipal implements Initializable{
 	
 	private void menuDecorator(Button btn, Pane pane) {
 		btn.setOnMouseEntered(value -> {
-			btn.setStyle("-fx-background-color:#ffffff");
-			pane.setStyle("-fx-background-color:#ffff00");
+			btn.setStyle("-fx-background-color:#87dff0");
+			pane.setStyle("-fx-background-color:#87dff0");
 		});
 		btn.setOnMouseExited(value -> {
 			btn.setStyle("-fx-background-color:#35145d");
